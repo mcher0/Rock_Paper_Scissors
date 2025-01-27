@@ -10,7 +10,49 @@ function getComputerChoice(){
 }
 function getHumanChoice(){
     let userInput = prompt("What do you choose? (enter rock,paper or scissors with no capital letters)", "rock");
+
     return userInput;
 }
-console.log(getComputerChoice());
-console.log(getHumanChoice())
+
+let computerScore = 0;
+let humanScore = 0;
+function playRound(ComputerChoice,humanChoice){
+    compChoice = ComputerChoice.toLowerCase();
+    hmChoice = humanChoice.toLowerCase();
+    if (hmChoice == "rock" && compChoice == "scissors"){
+        alert("You won, the computer chose scissors")
+        humanScore++;
+    }else if(hmChoice == "rock" && compChoice =="paper"){
+        alert("You lost, the computer chose paper")
+        computerScore++;
+    }else if(hmChoice == "rock" && compChoice == "rock"){
+        alert("It's a draw ! You both chose rock")
+        computerScore++;
+        humanScore++;
+    }
+
+    if (hmChoice == "scissors" && compChoice == "paper"){
+        alert("You won, the computer chose paper")
+        humanScore++;
+    }else if(hmChoice == "scissors" && compChoice =="rock"){
+        alert("You lost, the computer chose rock")
+        computerScore++;
+    }else if(hmChoice == "scissors" && compChoice == "scissors"){
+        alert("It's a draw ! You both chose scissors")
+        computerScore++;
+        humanScore++;
+    }
+
+    if (hmChoice == "paper" && compChoice == "rock"){
+        alert("You won, the computer chose rock")
+        humanScore++;
+    }else if(hmChoice == "paper" && compChoice =="scissors"){
+        alert("You lost, the computer chose scissors")
+        computerScore++;
+    }else if(hmChoice == "paper" && compChoice == "paper"){
+        alert("It's a draw ! You both chose paper")
+        computerScore++;
+        humanScore++;
+    }    
+}
+playRound(getComputerChoice(),getHumanChoice())
