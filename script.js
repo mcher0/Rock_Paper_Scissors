@@ -55,4 +55,18 @@ function playRound(ComputerChoice,humanChoice){
         humanScore++;
     }    
 }
-playRound(getComputerChoice(),getHumanChoice())
+
+function playGame(){
+    for (let i = 0; i < 5; i++) {
+        playRound(getComputerChoice(),getHumanChoice())
+        alert(`Your score: ${humanScore}\nComputer score: ${computerScore}`)
+      } 
+    if (humanScore > computerScore){
+        alert("You beat the computer! Congrats");
+    } else if (computerScore > humanScore){
+        alert("The computer beat you! lock in bro")
+    } else{
+        alert("Damn, it's a draw")
+    }
+}
+playGame()
