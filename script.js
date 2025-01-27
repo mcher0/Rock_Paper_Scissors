@@ -9,7 +9,7 @@ function getComputerChoice(){
     }
 }
 function getHumanChoice(){
-    let userInput = prompt("What do you choose? (enter rock,paper or scissors with no capital letters)", "rock");
+    let userInput = prompt("What do you choose?", "rock");
 
     return userInput;
 }
