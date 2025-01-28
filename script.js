@@ -8,11 +8,6 @@ function getComputerChoice(){
         return "scissors"
     }
 }
-function getHumanChoice(){
-    let userInput = prompt("What do you choose?", "rock");
-
-    return userInput;
-}
 
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
@@ -31,43 +26,62 @@ scissorsButton.addEventListener('click', ()=>{
 
 let computerScore = 0;
 let humanScore = 0;
-function playRound(ComputerChoice,humanChoice){
+function playRound(compChoice,hmChoice){
     const hmScore = document.querySelector("#hmscore");
     const pcScore = document.querySelector("#compscore");
+    const roundMsg = document.querySelector("#roundMsg");
     if (hmChoice == "rock" && compChoice == "scissors"){
-        alert("You won, the computer chose scissors")
         humanScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score:${computerScore}`;
+        roundMsg.textContent = "You won, the computer chose scissors";
     }else if(hmChoice == "rock" && compChoice =="paper"){
-        alert("You lost, the computer chose paper")
         computerScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score:${computerScore}`;
+        roundMsg.textContent = "You lost, the computer chose paper";
     }else if(hmChoice == "rock" && compChoice == "rock"){
-        alert("It's a draw ! You both chose rock")
         computerScore++;
         humanScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score:${computerScore}`;
+        roundMsg.textContent = "It's a draw ! You both chose rock";
     }
 
     if (hmChoice == "scissors" && compChoice == "paper"){
-        alert("You won, the computer chose paper")
         humanScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score:${computerScore}`;
+        roundMsg.textContent = "You won, the computer chose paper";
     }else if(hmChoice == "scissors" && compChoice =="rock"){
-        alert("You lost, the computer chose rock")
         computerScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score:${computerScore}`;
+        roundMsg.textContent = "You lost, the computer chose rock";
     }else if(hmChoice == "scissors" && compChoice == "scissors"){
-        alert("It's a draw ! You both chose scissors")
         computerScore++;
         humanScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score: ${computerScore}`;
+        roundMsg.textContent = "It's a draw ! You both chose scissors";
     }
 
     if (hmChoice == "paper" && compChoice == "rock"){
-        alert("You won, the computer chose rock")
         humanScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score: ${computerScore}`;
+        roundMsg.textContent = "You won, the computer chose rock";
     }else if(hmChoice == "paper" && compChoice =="scissors"){
-        alert("You lost, the computer chose scissors")
         computerScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score: ${computerScore}`;
+        roundMsg.textContent = "You lost, the computer chose scissors";
     }else if(hmChoice == "paper" && compChoice == "paper"){
-        alert("It's a draw ! You both chose paper")
         computerScore++;
         humanScore++;
+        hmScore.textContent = `Your score: ${humanScore}`;
+        pcScore.textContent = `Computer score: ${computerScore}`;
+        roundMsg.textContent = "It's a draw ! You both chose paper";
     }    
 }
 /*
