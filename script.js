@@ -55,7 +55,7 @@ function playRound(ComputerChoice,humanChoice){
         humanScore++;
     }    
 }
-
+/*
 function playGame(){
     for (let i = 0; i < 5; i++) {
         playRound(getComputerChoice(),getHumanChoice())
@@ -70,3 +70,4 @@ function playGame(){
     }
 }
 playGame()
+*/
