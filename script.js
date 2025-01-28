@@ -14,11 +14,26 @@ function getHumanChoice(){
     return userInput;
 }
 
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+
+rockButton.addEventListener('click', ()=>{
+    playRound(getComputerChoice(),"rock");
+})
+paperButton.addEventListener('click', ()=>{
+    playRound(getComputerChoice(),"paper");
+})
+scissorsButton.addEventListener('click', ()=>{
+    playRound(getComputerChoice(),"scissors");
+})
+
+
 let computerScore = 0;
 let humanScore = 0;
 function playRound(ComputerChoice,humanChoice){
-    compChoice = ComputerChoice.toLowerCase();
-    hmChoice = humanChoice.toLowerCase();
+    const hmScore = document.querySelector("#hmscore");
+    const pcScore = document.querySelector("#compscore");
     if (hmChoice == "rock" && compChoice == "scissors"){
         alert("You won, the computer chose scissors")
         humanScore++;
