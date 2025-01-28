@@ -28,7 +28,7 @@ let computerScore = 0;
 let humanScore = 0;
 let roundCount = 1;
 function playRound(compChoice,hmChoice){
-    if (roundCount <5)
+    if (roundCount <=5)
     {
         const hmScore = document.querySelector("#hmscore");
         const pcScore = document.querySelector("#compscore");
