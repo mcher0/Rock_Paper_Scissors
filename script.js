@@ -26,77 +26,90 @@ scissorsButton.addEventListener('click', ()=>{
 
 let computerScore = 0;
 let humanScore = 0;
+let roundCount = 1;
 function playRound(compChoice,hmChoice){
-    const hmScore = document.querySelector("#hmscore");
-    const pcScore = document.querySelector("#compscore");
-    const roundMsg = document.querySelector("#roundMsg");
-    if (hmChoice == "rock" && compChoice == "scissors"){
-        humanScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score:${computerScore}`;
-        roundMsg.textContent = "You won, the computer chose scissors";
-    }else if(hmChoice == "rock" && compChoice =="paper"){
-        computerScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score:${computerScore}`;
-        roundMsg.textContent = "You lost, the computer chose paper";
-    }else if(hmChoice == "rock" && compChoice == "rock"){
-        computerScore++;
-        humanScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score:${computerScore}`;
-        roundMsg.textContent = "It's a draw ! You both chose rock";
-    }
+    if (roundCount <5)
+    {
+        const hmScore = document.querySelector("#hmscore");
+        const pcScore = document.querySelector("#compscore");
+        const roundMsg = document.querySelector("#roundMsg");
+        if (hmChoice == "rock" && compChoice == "scissors"){
+            humanScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score:${computerScore}`;
+            roundMsg.textContent = "You won, the computer chose scissors";
+        }else if(hmChoice == "rock" && compChoice =="paper"){
+            computerScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score:${computerScore}`;
+            roundMsg.textContent = "You lost, the computer chose paper";
+        }else if(hmChoice == "rock" && compChoice == "rock"){
+            computerScore++;
+            humanScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score:${computerScore}`;
+            roundMsg.textContent = "It's a draw ! You both chose rock";
+        }
 
-    if (hmChoice == "scissors" && compChoice == "paper"){
-        humanScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score:${computerScore}`;
-        roundMsg.textContent = "You won, the computer chose paper";
-    }else if(hmChoice == "scissors" && compChoice =="rock"){
-        computerScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score:${computerScore}`;
-        roundMsg.textContent = "You lost, the computer chose rock";
-    }else if(hmChoice == "scissors" && compChoice == "scissors"){
-        computerScore++;
-        humanScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score: ${computerScore}`;
-        roundMsg.textContent = "It's a draw ! You both chose scissors";
-    }
+        if (hmChoice == "scissors" && compChoice == "paper"){
+            humanScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score:${computerScore}`;
+            roundMsg.textContent = "You won, the computer chose paper";
+        }else if(hmChoice == "scissors" && compChoice =="rock"){
+            computerScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score:${computerScore}`;
+            roundMsg.textContent = "You lost, the computer chose rock";
+        }else if(hmChoice == "scissors" && compChoice == "scissors"){
+            computerScore++;
+            humanScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score: ${computerScore}`;
+            roundMsg.textContent = "It's a draw ! You both chose scissors";
+        }
 
-    if (hmChoice == "paper" && compChoice == "rock"){
-        humanScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score: ${computerScore}`;
-        roundMsg.textContent = "You won, the computer chose rock";
-    }else if(hmChoice == "paper" && compChoice =="scissors"){
-        computerScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score: ${computerScore}`;
-        roundMsg.textContent = "You lost, the computer chose scissors";
-    }else if(hmChoice == "paper" && compChoice == "paper"){
-        computerScore++;
-        humanScore++;
-        hmScore.textContent = `Your score: ${humanScore}`;
-        pcScore.textContent = `Computer score: ${computerScore}`;
-        roundMsg.textContent = "It's a draw ! You both chose paper";
-    }    
+        if (hmChoice == "paper" && compChoice == "rock"){
+            humanScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score: ${computerScore}`;
+            roundMsg.textContent = "You won, the computer chose rock";
+        }else if(hmChoice == "paper" && compChoice =="scissors"){
+            computerScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score: ${computerScore}`;
+            roundMsg.textContent = "You lost, the computer chose scissors";
+        }else if(hmChoice == "paper" && compChoice == "paper"){
+            computerScore++;
+            humanScore++;
+            hmScore.textContent = `Your score: ${humanScore}`;
+            pcScore.textContent = `Computer score: ${computerScore}`;
+            roundMsg.textContent = "It's a draw ! You both chose paper";
+        }
+        roundCount++;
+    }else
+    {
+        rockButton.remove();
+        paperButton.remove();
+        scissorsButton.remove();
+        if (humanScore > computerScore){
+            roundMsg.textContent = "You beat the computer! Congrats";
+        } else if (computerScore > humanScore){
+            roundMsg.textContent = "The computer beat you! lock in bro";
+        } else{
+            roundMsg.textContent = "Damn, it's a tie";
+        }
+
+    }
 }
+
 /*
 function playGame(){
     for (let i = 0; i < 5; i++) {
         playRound(getComputerChoice(),getHumanChoice())
         alert(`Your score: ${humanScore}\nComputer score: ${computerScore}`)
       } 
-    if (humanScore > computerScore){
-        alert("You beat the computer! Congrats");
-    } else if (computerScore > humanScore){
-        alert("The computer beat you! lock in bro")
-    } else{
-        alert("Damn, it's a draw")
-    }
+
 }
 playGame()
 */

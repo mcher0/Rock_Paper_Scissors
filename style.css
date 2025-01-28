@@ -5,3 +5,7 @@ body{
     height: 100vh;
     gap:20px;
 }
+dib{
+    display: flex;
+    flex-direction: column;
+}
